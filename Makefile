@@ -7,6 +7,14 @@ docker_compose_prune:
 docker_compose_rm_all:
 	docker rm -f `docker ps -a -q`
 
-browser_open:
+open_browser:
 	xdg-open http://0.0.0.0:3000
 
+install_heroku:
+	curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+path_heroku:
+	echo 'PATH="/usr/local/heroku/bin:$(PATH)"' >> ~/.bashrc
+heroku_login:
+	heroku login
+heroku_create:
+	heroku create exampleapp$(shell whoami)$(shell date "+%Y%m%d")
