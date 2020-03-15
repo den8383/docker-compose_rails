@@ -7,3 +7,6 @@ docker_compose_prune:
 docker_compose_rm_all:
 	docker rm -f `docker ps -a -q`
 
+browser_open:
+	xdg-open http://0.0.0.0:3000
+
