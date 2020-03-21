@@ -15,6 +15,6 @@ install_heroku:
 path_heroku:
 	echo 'PATH="/usr/local/heroku/bin:$(PATH)"' >> ~/.bashrc
 heroku_login:
-	heroku login
+	heroku login --interactive
 heroku_create:
 	heroku create exampleapp$(shell whoami)$(shell date "+%Y%m%d")
